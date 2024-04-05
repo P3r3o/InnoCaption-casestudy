@@ -12,7 +12,7 @@ function ProductList({ addToCart, cart }) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container mt-3">
       <input
         type="text"
         className="form-control mb-4"
@@ -24,7 +24,6 @@ function ProductList({ addToCart, cart }) {
         {products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) ||
           product.category.toLowerCase().includes(query.toLowerCase()))
           .map(product => {
-            // Find if the product is in the cart and its quantity
             const cartItem = cart.find(item => item.id === product.id);
             const quantityInCart = cartItem ? cartItem.quantity : 0;
             return (
